@@ -19,16 +19,16 @@ It is also possible to provide an initial matrix `Y` as the initial search basis
 `cpts` is the number of Gauss-Legendre points using in the approximation of the Cauchy contour integral. 
 The nodes `zs` and weights `ws` for the quadrature rule can also be passed explicitly.
 """
-function feast(A, M0, λmin, λmax; cpts=8, tol=1.0e-12, maxiter=20)
+function feast(A, M0::Integer, λmin::Real, λmax::Real; cpts::Integer=8, tol::Real=1.0e-12, maxiter::Integer=20)
     # initial search space of size M0
-    Y = rand(complex(eltype(A)), size(A, 1), M0)
+    V0 = rand(complex(eltype(A)), size(A, 1), M0)
     # contour integral nodes and and weights
     zs, ws = cauchynodes(λmin, λmax, cpts)
     
-    return feast(A, Y, zs, ws, λmin, λmax; tol=tol, maxiter=maxiter)
+    return feast(A, V0, zs, ws, λmin, λmax; tol=tol, maxiter=maxiter)
 end
 
-function feast(A, Y, zs, ws, λmin, λmax; tol=1.0e-12, maxiter=20)
+function feast(A, Y, zs, ws, λmin::Real, λmax::Real; tol::Real=1.0e-12, maxiter::Integer=20)
     
     # dimension of problem and of subspace search
     N, M0 = size(Y)
