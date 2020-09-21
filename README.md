@@ -10,5 +10,5 @@ Limitation:
 * The subspace dimension must estimated.
 
 ## References
-[1] "A Density Matrix-based Algorithm for Solving Eigenvalue Problems", Eirv Polizzi, Phys. Rev. B 79, 115112 (2009), e-print: arXiv:0901.2665[](https://arxiv.org/abs/0901.2665)
+[1] "A Density Matrix-based Algorithm for Solving Eigenvalue Problems", Eric Polizzi, Phys. Rev. B 79, 115112 (2009), e-print: arXiv:0901.2665[](https://arxiv.org/abs/0901.2665)
 
